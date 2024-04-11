@@ -1,10 +1,38 @@
+name: build debug
+run-name: ${{ github.actor }} is building
 on: push
+
+env:
+  BUILD_TYPE: Debug
+
 jobs:
-  test:
+  build_debug:
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest, windows-latest]
+        platform: [ ubuntu-latest, macos-latest, windows-latest ]
     runs-on: ${{ matrix.platform }}
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+
+      - name: mkdir build
+        run: mkdir ${{github.workspace}}/build
+
+      - name: Install LLVM and Clang
+        uses: KyleMayes/install-llvm-action@v1
+        with:
+          version: "15.0"
+
+      - name: Configure CMake
+        run: cmake  ${{github.workspace}}
+        env:
+          CC: clang
+          CXX: clang++
+
+      - name: Build Debug
+        run: cmake --build ${{github.workspace}}
+        env:
+          CC: clang
+          CXX: clang++
+
