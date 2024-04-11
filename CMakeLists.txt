@@ -32,7 +32,7 @@ add_subdirectory(third_party)
 #add_subdirectory(alp_generated)
 
 # ALP Benchmark: -------------------------------------------------------------------------------------------------------
-#add_subdirectory(alp_benchmarks)
+add_subdirectory(alp_benchmarks)
 
 
 # Example : ------------------------------------------------------------------------------------------------------------

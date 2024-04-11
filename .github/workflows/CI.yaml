@@ -36,3 +36,6 @@ jobs:
           CC: clang
           CXX: clang++
 
+      - name: Test
+        run: ctest ctest -j 4
+
