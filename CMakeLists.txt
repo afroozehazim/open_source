@@ -29,7 +29,7 @@ include_directories(include)
 add_subdirectory(third_party)
 
 # ALP Primitives: -------------------------------------------------------------------------------------------------------
-#add_subdirectory(alp_generated)
+add_subdirectory(alp_generated)
 
 # ALP Benchmark: -------------------------------------------------------------------------------------------------------
 add_subdirectory(alp_benchmarks)
