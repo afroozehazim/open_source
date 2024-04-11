@@ -1,0 +1,8 @@
+add_executable(simple_compress simple_compress.cpp)
+target_link_libraries(simple_compress PRIVATE fallback_scalar_aav_1024_uf1_falp alp_ffor)
+
+add_executable(rd_compress rd_compress.cpp)
+target_link_libraries(rd_compress PRIVATE fallback_scalar_aav_1024_uf1_falp alp_ffor)
+
+add_executable(adaptive_compress adaptive_compress.cpp)
+target_link_libraries(adaptive_compress PRIVATE fallback_scalar_aav_1024_uf1_falp alp_ffor)
